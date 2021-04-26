@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <script src="https://d3js.org/d3.v6.js"></script>
+</head>
+
+
+<body>
+    <svg width="200", height="200">
+        <text x="50" y="50" font-family="Ubuntu" font-size="30">Sample text</text>
+    </svg>
+</body>
+<script>
+    let data = [1, 2, 3];
+    let svg = d3.select("svg");
+    svg.selectAll("text")
+        .data(data)
+        .enter()
+        .append("text")
+            .text(d => "Sample" + d)
+            .attr("x", d => d * 10)
+            .attr("y", d => d * 10)
+            .attr("font-family", "Ubuntu")
+</script>
+
+</html>
